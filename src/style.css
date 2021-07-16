@@ -1,0 +1,41 @@
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+p strong {
+  font-size: 34px;
+}
+p {
+  display: inline-flex;
+  margin-left: 10px;
+}
+span {
+  font-family: Roboto, arial, sans-serif;
+  font-size: 50px;
+}
+ul {
+  list-style-type: none;
+  color: #70757a;
+}
+.PHW {
+  color: #70757a;
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 6px;
+  margin-left: -15px;
+}
+.dayanddescription {
+  margin-top: 10px;
+  margin-left: -15px;
+  line-height: normal;
+  text-align: left;
+}
+.place {
+  color: #70757a;
+  font-size: 24px;
+}
+.units {
+  margin-top: 8px;
+}
