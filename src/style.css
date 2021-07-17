@@ -4,6 +4,9 @@
   margin-bottom: 0;
   margin-left: 0;
 }
+.weather-app {
+  border-radius: 5px;
+}
 p strong {
   font-size: 34px;
 }
