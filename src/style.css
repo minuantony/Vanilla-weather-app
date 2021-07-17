@@ -39,6 +39,9 @@ ul {
   color: #70757a;
   font-size: 24px;
 }
+.description::first-letter {
+  text-transform: uppercase;
+}
 .units {
   margin-top: 8px;
 }
