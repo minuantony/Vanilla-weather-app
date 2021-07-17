@@ -20,6 +20,25 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app border border-secondary">
+          <form id="search-form" class="search-form ms-2 mt-2">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  id="city-input"
+                  class="form-control"
+                  type="text"
+                  placeholder="Type a city"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  class="btn btn-primary w-75"
+                  type="submit"
+                  value="Search"
+                />
+              </div>
+            </div>
+          </form>
           <ul class="dayanddescription">
             <li id="place" class="place">Leander, TX-USA</li>
             <li id="date" class="dayandtime">Tuesday 1:00 PM</li>

@@ -1,5 +1,5 @@
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px;
   margin-bottom: 0;
   margin-left: 0;
@@ -7,9 +7,7 @@
 .weather-app {
   border-radius: 5px;
 }
-p strong {
-  font-size: 34px;
-}
+
 p {
   display: inline-flex;
   margin-left: 10px;
@@ -17,6 +15,7 @@ p {
 p span {
   font-family: Roboto, arial, sans-serif;
   font-size: 50px;
+  margin-top: 8px;
 }
 ul {
   list-style-type: none;
@@ -24,10 +23,11 @@ ul {
 }
 .PHW {
   color: #70757a;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 17px;
   padding-top: 6px;
   margin-left: -15px;
+  margin-top: 20px;
 }
 .dayanddescription {
   margin-top: 10px;
@@ -43,5 +43,5 @@ ul {
   text-transform: uppercase;
 }
 .units {
-  margin-top: 8px;
+  margin-top: 15px;
 }
