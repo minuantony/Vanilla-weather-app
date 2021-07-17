@@ -12,6 +12,8 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Weather App</title>
   </head>
   <body>
@@ -19,9 +21,9 @@
       <div class="weather-app-wrapper">
         <div class="weather-app border border-secondary">
           <ul class="dayanddescription">
-            <li class="place">Leander, TX-USA</li>
+            <li id="place" class="place">Leander, TX-USA</li>
             <li class="dayandtime">Tuesday 1:00 PM</li>
-            <li class="description">Partly Cloudy</li>
+            <li id="description" class="description">Partly Cloudy</li>
           </ul>
           <div class="row">
             <div class="col-6">
@@ -30,7 +32,7 @@
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   alt="sunny"
                 />
-                <span>88</span>
+                <span id="temperature">88</span>
                 <small class="units">
                   <a href="">°F </a>| <a href=""> °C</a>
                 </small>
@@ -38,9 +40,8 @@
             </div>
             <div class="col-6">
               <ul class="PHW">
-                <li>Precipitation:6%</li>
-                <li>Humidity:56%</li>
-                <li>Wind:4mph</li>
+                <li>Humidity: <span id="humidity">56%</span></li>
+                <li>Wind: <span id="wind"></span>4mph</li>
               </ul>
             </div>
           </div>
