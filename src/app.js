@@ -25,7 +25,8 @@ function formatTime(timestamp) {
 function Weather(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = celsiusTemperature;
   let placeElement = document.querySelector("#place");
   placeElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#description");
@@ -45,7 +46,28 @@ function Weather(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
+  let fahElement = document.querySelector("#fah");
+  fahElement.addEventListener("click", celsiusToFahrenheit);
+  let celElement = document.querySelector("#cel");
+  celElement.addEventListener("click", fahrenheitToCelsius);
 }
+function celsiusToFahrenheit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  cel.classList.remove("active");
+  fah.classList.add("active");
+  let celtofah = Math.round((celsiusTemperature * 9) / 5 + 32);
+  console.log(celtofah);
+  tempElement.innerHTML = celtofah;
+}
+function fahrenheitToCelsius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  fah.classList.remove("active");
+  cel.classList.add("active");
+  tempElement.innerHTML = celsiusTemperature;
+}
+
 function search(city) {
   let apiKey = "04dd91307ec56c5bdc7c8b53d6799c73";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -58,6 +80,11 @@ function handleSubmit(event) {
   console.log(cityInputElement.value);
   search(cityInputElement.value);
 }
+
+let celsiusTemperature = null;
+
+let celElement = document.querySelector("#cel");
+celElement.addEventListener("click", fahrenheitToCelsius);
 
 let form = document.querySelector("#search-form");
 console.log(form);
