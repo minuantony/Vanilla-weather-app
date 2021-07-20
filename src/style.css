@@ -1,5 +1,5 @@
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 600px;
   margin: 20px;
   margin-bottom: 0;
   margin-left: 0;
@@ -54,4 +54,25 @@ ul {
 .active:hover {
   color: #70a3d4;
   text-decoration: none;
+}
+.weather-forecast {
+  margin: 10px;
+  line-height: 15px;
+  text-align: center;
+}
+.weather-forecast-date {
+  color: #bababa;
+}
+
+.weather-forecast-temperature {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 15px;
+  font-family: Roboto, arial, sans-serif;
+}
+.weather-forecast-maxtemp {
+  color: #81858a;
+}
+.weather-forecast-mintemp {
+  color: #bababa;
 }
