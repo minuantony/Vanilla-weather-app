@@ -23,15 +23,12 @@ function formatTime(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 function getforecast(cordinates) {
-  console.log(cordinates);
   let apiKey = "04dd91307ec56c5bdc7c8b53d6799c73";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 //weather
 function displayWeather(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   celsiusTemperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = celsiusTemperature;
@@ -55,14 +52,14 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
   getforecast(response.data.coord);
-  let fahElement = document.querySelector("#fah");
+  /*let fahElement = document.querySelector("#fah");
   fahElement.addEventListener("click", celsiusToFahrenheit);
   let celElement = document.querySelector("#cel");
-  celElement.addEventListener("click", fahrenheitToCelsius);
+  celElement.addEventListener("click", fahrenheitToCelsius);*/
 }
 
 //unit conversion
-function celsiusToFahrenheit(event) {
+/*function celsiusToFahrenheit(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
   cel.classList.remove("active");
@@ -77,9 +74,9 @@ function fahrenheitToCelsius(event) {
   fah.classList.remove("active");
   cel.classList.add("active");
   tempElement.innerHTML = celsiusTemperature;
-}
-//type a city
+}*/
 
+//type a city
 function search(city) {
   let apiKey = "04dd91307ec56c5bdc7c8b53d6799c73";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -88,24 +85,19 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  console.log("abcd");
-  console.log(cityInputElement.value);
+  //console.log(cityInputElement.value);
   search(cityInputElement.value);
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   day = days[date.getDay()];
   return day;
 }
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  //let days = ["Thur", "Fri", "Sat", "Mon", "Tue", "Wed"];
 
   forecast.forEach(function (forecastday, index) {
     if (index < 6) {
@@ -125,10 +117,10 @@ function displayForecast(response) {
             <div class="weather-forecast-temperature">
                   <span class="weather-forecast-maxtemp">${Math.round(
                     forecastday.temp.max
-                  )}</span>
+                  )}°</span>
                   <span class="weather-forecast-mintemp">${Math.round(
                     forecastday.temp.min
-                  )}</span>
+                  )}°</span>
             </div>
         </div>
          `;
@@ -139,10 +131,9 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let celsiusTemperature = null;
+//let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
-console.log(form);
 form.addEventListener("submit", handleSubmit);
 
 search("New York");
